@@ -108,17 +108,17 @@
 
 
 
-  <meta name="description" content="传统的矩阵快速幂(a^b%mod)：1234567891011ll quick_pow(ll a,ll b,ll mod)&amp;#123;	ll ans=1;	a=a%mod;	while(b)&amp;#123;		if(b&amp;amp;1)			ans=quick_mul(ans,a,mod)%mod;		a=quick_mul(a,a,mod)%mod;		b&amp;gt;&amp;gt;=1;	&amp;#125;	retu">
+  <meta name="description" content="我好菜啊">
 <meta property="og:type" content="article">
 <meta property="og:title" content="快速幂取模+快速乘">
 <meta property="og:url" content="http://yoursite.com/2019/03/16/快速幂取模-快速乘/index.html">
 <meta property="og:site_name" content="Lusto&#39;s Blog">
-<meta property="og:description" content="传统的矩阵快速幂(a^b%mod)：1234567891011ll quick_pow(ll a,ll b,ll mod)&amp;#123;	ll ans=1;	a=a%mod;	while(b)&amp;#123;		if(b&amp;amp;1)			ans=quick_mul(ans,a,mod)%mod;		a=quick_mul(a,a,mod)%mod;		b&amp;gt;&amp;gt;=1;	&amp;#125;	retu">
+<meta property="og:description" content="我好菜啊">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-16T12:01:08.164Z">
+<meta property="og:updated_time" content="2019-03-16T12:03:13.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="快速幂取模+快速乘">
-<meta name="twitter:description" content="传统的矩阵快速幂(a^b%mod)：1234567891011ll quick_pow(ll a,ll b,ll mod)&amp;#123;	ll ans=1;	a=a%mod;	while(b)&amp;#123;		if(b&amp;amp;1)			ans=quick_mul(ans,a,mod)%mod;		a=quick_mul(a,a,mod)%mod;		b&amp;gt;&amp;gt;=1;	&amp;#125;	retu">
+<meta name="twitter:description" content="我好菜啊">
 
 
 
@@ -342,7 +342,7 @@
                 
               
 
-              <time title="创建时间：2019-03-16 19:42:43 / 修改时间：20:01:08" itemprop="dateCreated datePublished" datetime="2019-03-16T19:42:43+08:00">2019-03-16</time>
+              <time title="创建时间：2019-03-16 19:42:43 / 修改时间：20:03:13" itemprop="dateCreated datePublished" datetime="2019-03-16T19:42:43+08:00">2019-03-16</time>
             
 
             
@@ -387,7 +387,7 @@
       
 
       
-        <a id="more"></a>
+        <p> 我好菜啊<a id="more"></a></p>
 <h5 id="传统的矩阵快速幂-a-b-mod-："><a href="#传统的矩阵快速幂-a-b-mod-：" class="headerlink" title="传统的矩阵快速幂(a^b%mod)："></a>传统的矩阵快速幂(a^b%mod)：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">quick_pow</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;</span><br><span class="line">	ll ans=<span class="number">1</span>;</span><br><span class="line">	a=a%mod;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=quick_mul(ans,a,mod)%mod;</span><br><span class="line">		a=quick_mul(a,a,mod)%mod;</span><br><span class="line">		b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>这样已经能解决大多数高次幂取模的问题，但是如果快速幂过程中仅两个数相乘后就爆long long呢？或者有更高的速度要求？</p>
 <p>那就要用到<strong>快速乘</strong>了</p>
@@ -395,7 +395,7 @@
 <p>举例：123*5=123*(101)<sub>2</sub>=(123&lt;&lt;2)+0+(123&lt;&lt;0)</p>
 <p>快速幂的过程中加上快速乘来优化，提高速度，并且能承受更大一点的数据范围</p>
 <p>代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">ll <span class="title">quick_mul</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;<span class="comment">//a*b%mod</span></span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=(ans+a)%mod;</span><br><span class="line">		a=(a&lt;&lt;<span class="number">1</span>)%mod;</span><br><span class="line">		b=(b&gt;&gt;<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速幂+快速乘</span></span><br><span class="line"><span class="function">ll <span class="title">quick_pow</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;</span><br><span class="line">	ll ans=<span class="number">1</span>;</span><br><span class="line">	a=a%mod;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=quick_mul(ans,a,mod)%mod;</span><br><span class="line">		a=quick_mul(a,a,mod)%mod;</span><br><span class="line">		b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//快速乘</span></span><br><span class="line"><span class="function">ll <span class="title">quick_mul</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;<span class="comment">//a*b%mod</span></span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=(ans+a)%mod;</span><br><span class="line">		a=(a&lt;&lt;<span class="number">1</span>)%mod;</span><br><span class="line">		b=(b&gt;&gt;<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速幂+快速乘</span></span><br><span class="line"><span class="function">ll <span class="title">quick_pow</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;</span><br><span class="line">	ll ans=<span class="number">1</span>;</span><br><span class="line">	a=a%mod;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=quick_mul(ans,a,mod)%mod;</span><br><span class="line">		a=quick_mul(a,a,mod)%mod;</span><br><span class="line">		b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
