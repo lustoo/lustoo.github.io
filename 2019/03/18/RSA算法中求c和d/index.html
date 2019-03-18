@@ -108,25 +108,24 @@
 
 
 
-  <meta name="description" content="我好菜啊">
-<meta name="keywords" content="矩阵快速幂">
+  <meta name="description" content="已知p q e m 求 c d">
 <meta property="og:type" content="article">
-<meta property="og:title" content="hdu6470 Count 矩阵快速幂">
-<meta property="og:url" content="http://yoursite.com/2019/03/17/hdu6470-Count-矩阵快速幂/index.html">
+<meta property="og:title" content="RSA算法中求c和d">
+<meta property="og:url" content="http://yoursite.com/2019/03/18/RSA算法中求c和d/index.html">
 <meta property="og:site_name" content="Lusto&#39;s Blog">
-<meta property="og:description" content="我好菜啊">
+<meta property="og:description" content="已知p q e m 求 c d">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-17T13:11:00.800Z">
+<meta property="og:updated_time" content="2019-03-18T03:37:25.025Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="hdu6470 Count 矩阵快速幂">
-<meta name="twitter:description" content="我好菜啊">
+<meta name="twitter:title" content="RSA算法中求c和d">
+<meta name="twitter:description" content="已知p q e m 求 c d">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/17/hdu6470-Count-矩阵快速幂/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/18/RSA算法中求c和d/">
 
 
 
@@ -136,7 +135,7 @@
   };
 </script>
 
-  <title>hdu6470 Count 矩阵快速幂 | Lusto's Blog</title>
+  <title>RSA算法中求c和d | Lusto's Blog</title>
   
 
 
@@ -353,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/17/hdu6470-Count-矩阵快速幂/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/RSA算法中求c和d/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lusto">
@@ -370,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">hdu6470 Count 矩阵快速幂
+          <h1 class="post-title" itemprop="name headline">RSA算法中求c和d
               
             
           </h1>
@@ -395,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-03-17 11:23:12 / 修改时间：21:11:00" itemprop="dateCreated datePublished" datetime="2019-03-17T11:23:12+08:00">2019-03-17</time>
+              <time title="创建时间：2019-03-18 11:34:29 / 修改时间：11:37:25" itemprop="dateCreated datePublished" datetime="2019-03-18T11:34:29+08:00">2019-03-18</time>
             
 
             
@@ -432,8 +431,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/17/hdu6470-Count-矩阵快速幂/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/17/hdu6470-Count-矩阵快速幂/" itemprop="commentCount"></span>
+                <a href="/2019/03/18/RSA算法中求c和d/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/RSA算法中求c和d/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -468,63 +467,10 @@
       
 
       
-        <blockquote>
-<p>我好菜啊<a id="more"></a></p>
-</blockquote>
-<p><a href="http://acm.hdu.edu.cn/showproblem.php?pid=6470" target="_blank" rel="noopener">题目连接</a></p>
-<h5 id="Promblem-Description"><a href="#Promblem-Description" class="headerlink" title="Promblem Description"></a>Promblem Description</h5><blockquote>
-<p>Farmer John有n头奶牛. </p>
-<p>某天奶牛想要数一数有多少头奶牛,以一种特殊的方式: </p>
-<p>第一头奶牛为1号,第二头奶牛为2号,第三头奶牛之后,假如当前奶牛是第n头,那么他的编号就是2倍的第n-2头奶牛的编号加上第n-1头奶牛的编号再加上自己当前的n的三次方为自己的编号. </p>
-<p>现在Farmer John想知道,第n头奶牛的编号是多少,估计答案会很大,你只要输出答案对123456789取模. </p>
-</blockquote>
-<h5 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h5><blockquote>
-<p>第一行输入一个T,表示有T组样例 </p>
-<p>接下来T行,每行有一个正整数n,表示有n头奶牛 (n&gt;=3) </p>
-<p>其中，T=10^4,n&lt;=10^18 </p>
-</blockquote>
-<h5 id="题解："><a href="#题解：" class="headerlink" title="题解："></a>题解：</h5><p>简单粗暴的题意：求 f(n)=2f(n-2)+f(n-1)+n<sup>3</sup> </p>
-<p>直接上矩阵快速幂</p>
-<p>(n+1)<sup>3</sup> =n<sup>3</sup> +3n<sup>2</sup>+3n+1</p>
-<p>(n+1)<sup>2</sup>=n<sup>2</sup>+2n+1</p>
-<p>由此构造出转移矩阵：</p>
-<script type="math/tex; mode=display">
-\left(
-\begin{matrix}
-   1 & 2 & 1 & 0 & 0 & 0 \\
-   1 & 0 & 0 & 0 & 0 & 0 \\
-   0 & 0 & 1 & 3 & 3 & 1 \\
-   0 & 0 & 0 & 1 & 2 & 1 \\
-   0 & 0 & 0 & 0 & 1 & 1 \\
-   0 & 0 & 0 & 0 & 0 & 1 
-  \end{matrix}
-  \right)</script><p>初始矩阵：</p>
-<script type="math/tex; mode=display">
-\left(
- \begin{matrix}
-   f(n-1) \\
-    f(n-2)\\
-    n^3\\
-   n^2 \\
-  n \\
- 1 \\
-  \end{matrix} 
-\right)
-=
-\left(
- \begin{matrix}
-   1 \\
-    2\\
-    27\\
-   9 \\
-  3 \\
- 1 
-  \end{matrix} 
-\right)</script><p>转移矩阵<sup>n-1</sup>*初始矩阵=目标矩阵</p>
-<p>代码：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sd(a) scanf(<span class="meta-string">"%d"</span>,&amp;a)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sld(a) scanf(<span class="meta-string">"%lld"</span>,&amp;a)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">2</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">matrix</span>&#123;</span></span><br><span class="line">	ll a[<span class="number">6</span>][<span class="number">6</span>];</span><br><span class="line">	matrix()&#123;</span><br><span class="line">		<span class="built_in">memset</span>(a,<span class="number">0</span>,<span class="keyword">sizeof</span>(a));</span><br><span class="line">	&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">ll n,t;</span><br><span class="line">matrix ans;<span class="comment">//初始矩阵</span></span><br><span class="line">matrix to;<span class="comment">//转移矩阵</span></span><br><span class="line"></span><br><span class="line"><span class="function">matrix <span class="title">mul_matrix</span><span class="params">(matrix ans,matrix to)</span></span>&#123;</span><br><span class="line">	matrix temp;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;++i)</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;<span class="number">6</span>;++j)</span><br><span class="line">			<span class="keyword">for</span>(<span class="keyword">int</span> k=<span class="number">0</span>;k&lt;<span class="number">6</span>;++k)</span><br><span class="line">			&#123;</span><br><span class="line">				temp.a[i][j]=(temp.a[i][j]+ans.a[i][k]*to.a[k][j])%<span class="number">123456789</span>;</span><br><span class="line">			&#125;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">matrix <span class="title">pow_m</span><span class="params">(matrix to,ll n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	matrix temp;<span class="comment">//单位矩阵</span></span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;<span class="number">6</span>;++i)</span><br><span class="line">		temp.a[i][i]=<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">while</span>(n)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(n&amp;<span class="number">1</span>)temp=mul_matrix(temp,to);</span><br><span class="line">		to=mul_matrix(to,to);</span><br><span class="line">		n&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> temp;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">   <span class="keyword">while</span>(t--)&#123;</span><br><span class="line">   	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">   	to.a[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;to.a[<span class="number">0</span>][<span class="number">1</span>]=<span class="number">2</span>;to.a[<span class="number">0</span>][<span class="number">2</span>]=<span class="number">1</span>;</span><br><span class="line">   	to.a[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">   	to.a[<span class="number">2</span>][<span class="number">2</span>]=<span class="number">1</span>;to.a[<span class="number">2</span>][<span class="number">3</span>]=<span class="number">3</span>;to.a[<span class="number">2</span>][<span class="number">4</span>]=<span class="number">3</span>;to.a[<span class="number">2</span>][<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">   	to.a[<span class="number">3</span>][<span class="number">3</span>]=<span class="number">1</span>;to.a[<span class="number">3</span>][<span class="number">4</span>]=<span class="number">2</span>;to.a[<span class="number">3</span>][<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">   	to.a[<span class="number">4</span>][<span class="number">4</span>]=<span class="number">1</span>;to.a[<span class="number">4</span>][<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">   	to.a[<span class="number">5</span>][<span class="number">5</span>]=<span class="number">1</span>;</span><br><span class="line">    ans.a[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">2</span>;</span><br><span class="line">    ans.a[<span class="number">1</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    ans.a[<span class="number">2</span>][<span class="number">0</span>]=<span class="number">27</span>;</span><br><span class="line">    ans.a[<span class="number">3</span>][<span class="number">0</span>]=<span class="number">9</span>;</span><br><span class="line">    ans.a[<span class="number">4</span>][<span class="number">0</span>]=<span class="number">3</span>;</span><br><span class="line">    ans.a[<span class="number">5</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">    ans=mul_matrix(pow_m(to,n<span class="number">-1</span>),ans);</span><br><span class="line">   	<span class="built_in">cout</span>&lt;&lt;ans.a[<span class="number">1</span>][<span class="number">0</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<script type="math/tex; mode=display">
-\LaTeX的公式无法显示请参考 https://blog.csdn.net/crazy\_scott/article/details/79293576</script>
+        <p>已知p q e m 求 c d<a id="more"></a></p>
+<p>直接上代码：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sd(a) scanf(<span class="meta-string">"%d"</span>,&amp;a)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sld(a) scanf(<span class="meta-string">"%lld"</span>,&amp;a)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">2</span>;</span><br><span class="line">ll x,y;</span><br><span class="line"><span class="comment">//快速乘</span></span><br><span class="line"><span class="function">ll <span class="title">quick_mul</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;<span class="comment">//a*b%mod</span></span><br><span class="line">	ll ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=(ans+a)%mod;</span><br><span class="line">		a=(a&lt;&lt;<span class="number">1</span>)%mod;</span><br><span class="line">		b=(b&gt;&gt;<span class="number">1</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	</span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//快速幂+快速乘 最优</span></span><br><span class="line"><span class="function">ll <span class="title">quick_pow</span><span class="params">(ll a,ll b,ll mod)</span></span>&#123;</span><br><span class="line">	ll ans=<span class="number">1</span>;</span><br><span class="line">	a=a%mod;</span><br><span class="line">	<span class="keyword">while</span>(b)&#123;</span><br><span class="line">		<span class="keyword">if</span>(b&amp;<span class="number">1</span>)</span><br><span class="line">			ans=quick_mul(ans,a,mod)%mod;</span><br><span class="line">		a=quick_mul(a,a,mod)%mod;</span><br><span class="line">		b&gt;&gt;=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> ans%mod;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">exgcd</span><span class="params">(<span class="keyword">long</span> <span class="keyword">long</span> a,<span class="keyword">long</span> <span class="keyword">long</span> b)</span><span class="comment">//扩展欧几里得求x</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(b==<span class="number">0</span>) <span class="comment">//当b=0时就是遇到了特解，可以递归回去算答案了</span></span><br><span class="line">    &#123;</span><br><span class="line">        x=<span class="number">1</span>,y=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> ;</span><br><span class="line">    &#125;</span><br><span class="line">    exgcd(b,a%b);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> k;</span><br><span class="line">    k=x;</span><br><span class="line">    x=y;</span><br><span class="line">    y=k-(a/b)*y;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">     ll p,q,e,m,c,d;</span><br><span class="line">     <span class="keyword">while</span>(<span class="literal">true</span>)</span><br><span class="line">     &#123;</span><br><span class="line">     	<span class="built_in">cout</span>&lt;&lt;<span class="string">"input p:"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     	<span class="built_in">cin</span>&gt;&gt;p;</span><br><span class="line">     	<span class="built_in">cout</span>&lt;&lt;<span class="string">"input q:"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     	<span class="built_in">cin</span>&gt;&gt;q;</span><br><span class="line">     	<span class="built_in">cout</span>&lt;&lt;<span class="string">"input e:"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     	<span class="built_in">cin</span>&gt;&gt;e;</span><br><span class="line">     	<span class="built_in">cout</span>&lt;&lt;<span class="string">"input m:"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     	<span class="built_in">cin</span>&gt;&gt;m;</span><br><span class="line">     	ll n=q*p;</span><br><span class="line">     	c=quick_pow(m,e,n);</span><br><span class="line">     	ll fn=(p<span class="number">-1</span>)*(q<span class="number">-1</span>);</span><br><span class="line">     	exgcd(e,fn);</span><br><span class="line">     	d=x&lt;<span class="number">0</span>?x+fn:x;</span><br><span class="line">     	<span class="built_in">cout</span>&lt;&lt;<span class="string">"c="</span>&lt;&lt;c&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">     	<span class="built_in">cout</span>&lt;&lt;<span class="string">"d="</span>&lt;&lt;d&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line"> 	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
 
@@ -545,12 +491,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/矩阵快速幂/" rel="tag"># 矩阵快速幂</a>
-          
-        </div>
-      
 
       
       
@@ -560,8 +500,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/16/快速幂取模-快速乘/" rel="next" title="快速幂取模+快速乘">
-                <i class="fa fa-chevron-left"></i> 快速幂取模+快速乘
+              <a href="/2019/03/17/hdu6470-Count-矩阵快速幂/" rel="next" title="hdu6470 Count 矩阵快速幂">
+                <i class="fa fa-chevron-left"></i> hdu6470 Count 矩阵快速幂
               </a>
             
           </div>
@@ -569,10 +509,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/18/RSA算法中求c和d/" rel="prev" title="RSA算法中求c和d">
-                RSA算法中求c和d <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -620,17 +556,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -708,22 +635,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#Promblem-Description"><span class="nav-number">1.</span> <span class="nav-text">Promblem Description</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Input"><span class="nav-number">2.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#题解："><span class="nav-number">3.</span> <span class="nav-text">题解：</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -956,30 +867,6 @@
   
   
 
-  
-    
-      <script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      },
-      TeX: {equationNumbers: { autoNumber: "AMS" }}
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-      var all = MathJax.Hub.getAllJax(), i;
-        for (i=0; i < all.length; i += 1) {
-          all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-    
   
 
 
