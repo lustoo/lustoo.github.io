@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/2019/03/19/Java%E5%BF%AB%E8%AF%BB/</loc>
+    <lastmod>2019-03-19</lastmod>
+  </url>  <url>
+    <loc>http://yoursite.com/2019/03/15/Sublime-Text-3-%E9%85%8D%E7%BD%AELaTeX/</loc>
+    <lastmod>2019-03-19</lastmod>
+  </url>  <url>
     <loc>http://yoursite.com/2018/12/02/Next%E4%B8%BB%E9%A2%98%E4%B8%AA%E6%80%A7%E5%8C%96%E9%85%8D%E7%BD%AE/</loc>
     <lastmod>2019-03-19</lastmod>
   </url>  <url>
@@ -10,9 +16,6 @@
     <loc>http://yoursite.com/2019/03/18/RSA%E7%AE%97%E6%B3%95%E4%B8%AD%E6%B1%82c%E5%92%8Cd/</loc>
     <lastmod>2019-03-19</lastmod>
   </url>  <url>
-    <loc>http://yoursite.com/2019/03/15/Sublime-Text-3-%E9%85%8D%E7%BD%AELaTeX/</loc>
-    <lastmod>2019-03-19</lastmod>
-  </url>  <url>
     <loc>http://yoursite.com/2019/03/16/%E5%BF%AB%E9%80%9F%E5%B9%82%E5%8F%96%E6%A8%A1-%E5%BF%AB%E9%80%9F%E4%B9%98/</loc>
     <lastmod>2019-03-19</lastmod>
   </url>  <url>
@@ -20,9 +23,6 @@
     <lastmod>2019-03-19</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/03/19/%E4%BA%8C%E8%BF%9B%E5%88%B6%E6%9E%9A%E4%B8%BE%E5%AD%90%E9%9B%86/</loc>
-    <lastmod>2019-03-19</lastmod>
-  </url>  <url>
-    <loc>http://yoursite.com/2019/03/19/Java%E5%BF%AB%E8%AF%BB/</loc>
     <lastmod>2019-03-19</lastmod>
   </url>  <url>
     <loc>http://yoursite.com/2019/03/19/Java%E5%85%A8%E6%8E%92%E5%88%97%E4%B8%8E%E5%AD%97%E5%85%B8%E5%BA%8F%E5%85%A8%E6%8E%92%E5%88%97/</loc>
