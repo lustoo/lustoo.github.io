@@ -108,24 +108,24 @@
 
 
 
-  <meta name="description" content="怎么这么快哦">
+  <meta name="description" content="Petre大神的 Java 快读 1234567891011121314151617181920212223242526272829303132333435import java.io.*;import java.util.*;public class Main &amp;#123;    static int a[]=new int[101];    public static void main(St">
 <meta property="og:type" content="article">
-<meta property="og:title" content="欧拉筛">
-<meta property="og:url" content="http://yoursite.com/2019/03/18/欧拉筛/index.html">
+<meta property="og:title" content="Java快读">
+<meta property="og:url" content="http://yoursite.com/2019/03/19/Java快读/index.html">
 <meta property="og:site_name" content="Lusto&#39;s Blog">
-<meta property="og:description" content="怎么这么快哦">
+<meta property="og:description" content="Petre大神的 Java 快读 1234567891011121314151617181920212223242526272829303132333435import java.io.*;import java.util.*;public class Main &amp;#123;    static int a[]=new int[101];    public static void main(St">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-03-18T07:26:41.107Z">
+<meta property="og:updated_time" content="2019-03-19T01:24:13.808Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="欧拉筛">
-<meta name="twitter:description" content="怎么这么快哦">
+<meta name="twitter:title" content="Java快读">
+<meta name="twitter:description" content="Petre大神的 Java 快读 1234567891011121314151617181920212223242526272829303132333435import java.io.*;import java.util.*;public class Main &amp;#123;    static int a[]=new int[101];    public static void main(St">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/03/18/欧拉筛/">
+  <link rel="canonical" href="http://yoursite.com/2019/03/19/Java快读/">
 
 
 
@@ -135,7 +135,7 @@
   };
 </script>
 
-  <title>欧拉筛 | Lusto's Blog</title>
+  <title>Java快读 | Lusto's Blog</title>
   
 
 
@@ -352,7 +352,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/18/欧拉筛/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/03/19/Java快读/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Lusto">
@@ -369,7 +369,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">欧拉筛
+          <h1 class="post-title" itemprop="name headline">Java快读
               
             
           </h1>
@@ -394,7 +394,7 @@
                 
               
 
-              <time title="创建时间：2019-03-18 13:38:28 / 修改时间：15:26:41" itemprop="dateCreated datePublished" datetime="2019-03-18T13:38:28+08:00">2019-03-18</time>
+              <time title="创建时间：2019-03-19 09:22:04 / 修改时间：09:24:13" itemprop="dateCreated datePublished" datetime="2019-03-19T09:22:04+08:00">2019-03-19</time>
             
 
             
@@ -431,8 +431,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/03/18/欧拉筛/#comments" itemprop="discussionUrl">
-                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/18/欧拉筛/" itemprop="commentCount"></span>
+                <a href="/2019/03/19/Java快读/#comments" itemprop="discussionUrl">
+                  <span class="post-meta-item-text">评论数：</span> <span class="post-comments-count valine-comment-count" data-xid="/2019/03/19/Java快读/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -467,25 +467,8 @@
       
 
       
-        <blockquote>
-<p>怎么这么快哦</p>
-</blockquote>
-<a id="more"></a>
-<h4 id="欧拉筛法"><a href="#欧拉筛法" class="headerlink" title="欧拉筛法"></a>欧拉筛法</h4><p>​    在线性时间内筛出2-n之内的素数</p>
-<h5 id="先上代码："><a href="#先上代码：" class="headerlink" title="先上代码："></a>先上代码：</h5><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sd(a) scanf(<span class="meta-string">"%d"</span>,&amp;a)</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> sld(a) scanf(<span class="meta-string">"%lld"</span>,&amp;a)</span></span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> inf=<span class="number">0x3f3f3f</span>;</span><br><span class="line"><span class="keyword">int</span> n,t;</span><br><span class="line"><span class="keyword">int</span> prime[<span class="number">100001</span>];</span><br><span class="line"><span class="keyword">bool</span> v[<span class="number">100001</span>];</span><br><span class="line"><span class="keyword">int</span> ct=<span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">ola</span><span class="params">(<span class="keyword">int</span> n)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">2</span>;i&lt;=n;++i)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!v[i])</span><br><span class="line">			prime[ct++]=i;</span><br><span class="line">		<span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j&lt;ct&amp;&amp;i*prime[j]&lt;=n;++j)</span><br><span class="line">		&#123;</span><br><span class="line">			v[i*prime[j]]=<span class="literal">true</span>;</span><br><span class="line">			<span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)<span class="keyword">break</span>;<span class="comment">//实现O(n)的关键所在</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">   <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">   ola(n);<span class="comment">//n以内的素数</span></span><br><span class="line">   <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;ct;++i)</span><br><span class="line">   	<span class="built_in">cout</span>&lt;&lt;prime[i]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>​    其基本思想是根据已经找出的素数，筛去其倍数，在 i 增加的过程中没被筛掉的数，即v[i]=false的 i 为新找到的素数。</p>
-<p>而实现O(n)的关键之处，也是最难理解的地方是这句：</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(i%prime[j]==<span class="number">0</span>)<span class="keyword">break</span>;</span><br></pre></td></tr></table></figure>
-<p>为什么这个时候就可以break了呢？</p>
-<h5 id="分析："><a href="#分析：" class="headerlink" title="分析："></a>分析：</h5><p>由于 i 的每次循环内，j 都是从0开始的，所以每个合数都至少会被它的最小素因子筛掉一次</p>
-<p>举例：12 一定会在 <strong>i=6，prime[0]=2</strong> 时被筛掉一次，6一定会在 <strong>i=3，prime[0]=2</strong> 时被筛掉一次</p>
-<p>而最好的算法当然是 <strong>使每个合数都只被它的最小素因子筛掉一次</strong>，即 12 在i=6时被 prime[0]=2 筛过一次就足够了，它不需要在 i=4 时被 prime[1]=3 再筛一次</p>
-<p>虽然时间上 <strong>i=6 , prime[0]=2</strong> 会出现在 <strong>i=4 , prime[1]=3</strong> 后面，但这不重要，我们要阻止前者的多余操作，这就是上面那句关键代码干的事情</p>
-<h5 id="证明："><a href="#证明：" class="headerlink" title="证明："></a>证明：</h5><p>假如 i%prime[j]=0 , 那么可以令 i=k*prime[j] </p>
-<p>那么，下一次循环的要筛掉的数记为 q=i*prime[j+1]， q就可以看成 k*prime[j]*prime[j+1]</p>
-<p>其中 prime[j] &lt;= k &lt; prime[j+1] （有那句代码在的话是可以保证 prime[j] &lt;= k 的）</p>
-<p>即，q 的最小素因子为 prime[i]，就是说 q 在将来至少会被 <strong>i’=k*prime[j+1]，prime[j]</strong> 筛掉一次，那么用 <strong>i，prime[j+1]</strong> 来筛掉 q 就是多余的操作了</p>
-<p>后面循环的 q‘=i*prime[j+2]，q’’=i*prime[j+3] 也都同理，都是多余操作了，所以可以break了</p>
+        <p>Petre大神的 Java 快读</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"><span class="keyword">import</span> java.util.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> <span class="keyword">int</span> a[]=<span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">101</span>];</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        InputReader sc=<span class="keyword">new</span> InputReader(System.in);</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">static</span> <span class="class"><span class="keyword">class</span> <span class="title">InputReader</span></span>&#123;</span><br><span class="line">        <span class="keyword">public</span> BufferedReader reader;</span><br><span class="line">        <span class="keyword">public</span> StringTokenizer tokenizer;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">InputReader</span><span class="params">(InputStream stream)</span></span>&#123;</span><br><span class="line">            reader=<span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader (stream));</span><br><span class="line">            tokenizer=<span class="keyword">null</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">next</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">while</span>(tokenizer==<span class="keyword">null</span>||!tokenizer.hasMoreTokens())</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    tokenizer=<span class="keyword">new</span> StringTokenizer(reader.readLine());</span><br><span class="line">                &#125; <span class="keyword">catch</span> (IOException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">return</span> tokenizer.nextToken();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> Integer <span class="title">nextInt</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Integer.parseInt(next());</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">long</span> <span class="title">nextLong</span><span class="params">()</span></span>&#123;</span><br><span class="line">            <span class="keyword">return</span> Long.parseLong(next());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -516,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/03/18/RSA算法中求c和d/" rel="next" title="RSA算法中求c和d">
-                <i class="fa fa-chevron-left"></i> RSA算法中求c和d
+              <a href="/2019/03/19/Java全排列与字典序全排列/" rel="next" title="Java全排列与字典序全排列">
+                <i class="fa fa-chevron-left"></i> Java全排列与字典序全排列
               </a>
             
           </div>
@@ -525,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/03/19/Java全排列与字典序全排列/" rel="prev" title="Java全排列与字典序全排列">
-                Java全排列与字典序全排列 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -576,17 +555,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -666,22 +636,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#欧拉筛法"><span class="nav-number">1.</span> <span class="nav-text">欧拉筛法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#先上代码："><span class="nav-number">1.1.</span> <span class="nav-text">先上代码：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分析："><span class="nav-number">1.2.</span> <span class="nav-text">分析：</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#证明："><span class="nav-number">1.3.</span> <span class="nav-text">证明：</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
